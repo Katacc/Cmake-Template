@@ -61,3 +61,20 @@ target_include_directories(main PUBLIC
                              )
 ```
 6. Include the library in your sourcecode!
+
+
+## Adding support for SDL
+Make sure ur SDL is in ur path, im using SDL3
+
+Add thse lines to your `CMakeLists.txt`
+```
+trget_link_libraries(main PRIVATE SDL3::SDL3)
+target_compile_definitions(main PRIVATE SDL_MAIN_CALLBACKS)
+target_link_options(main PRIVATE -static)
+```
+
+## Hide console window
+To hide console window, add WIN32 setting to your `add_executable()`
+```
+add_executable(main WIN32 main.cpp)
+```
