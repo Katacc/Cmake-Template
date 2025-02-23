@@ -49,10 +49,6 @@ add_subdirectory(libraries/Utility)
 ```
 5. Update the included folders to look for the library aswell
 ```
-
-# Including directories
-# Need to include header (.h) file locations for libraries aswell
-# Example here is the Utility library
 target_include_directories(main PUBLIC
                              "${PROJECT_BINARY_DIR}"
                              "${PROJECT_SOURCE_DIR}/libraries/Utility"
