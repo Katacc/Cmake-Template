@@ -19,3 +19,13 @@ If you want to use shared libraries, you can delete the lines for the STATIC LIB
 
 By default it outputs the executable file in the source, but that can be modifiable from the `CMakeLists.txt`
 `set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY "../")`
+
+
+## Static or shared libraries
+By default, static libraries are being used, remove these lines to enable shared libraries
+
+```
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+set(BUILD_SHARED_LIBS OFF)
+set(CMAKE_EXE_LINKER_FLAGS "-static")
+```
