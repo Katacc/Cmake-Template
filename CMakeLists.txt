@@ -18,6 +18,7 @@ set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY "../")
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+
 # Adding configuration file
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
@@ -36,11 +37,12 @@ target_include_directories(main PUBLIC
 
 
 # Adding libraries
-
+# Add the folders to the libraries
 add_subdirectory(libraries/Utility)
 add_subdirectory(libraries/stack)
+
 target_link_libraries(main PUBLIC
-                    # Libraries
+                    # Libraries...
                     Utility
                     stack
                     )
