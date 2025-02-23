@@ -18,7 +18,10 @@ If you want to use shared libraries, you can delete the lines for the STATIC LIB
 ## Output file
 
 By default it outputs the executable file in the source, but that can be modifiable from the `CMakeLists.txt`
-`set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY "../")`
+
+```
+set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY "../")
+```
 
 
 ## Static or shared libraries
