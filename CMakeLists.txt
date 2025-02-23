@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.31)
 
 project(cmakeTest VERSION 1.0)
 
+# USE STATIC LIBRARIES
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+set(BUILD_SHARED_LIBS OFF)
+set(CMAKE_EXE_LINKER_FLAGS "-static")
+
 # Define the target and the source file for it
 add_executable(main src/main.cpp)
 
