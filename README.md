@@ -14,3 +14,8 @@ in `libraries` goes your libraries
 in CMakeLists.txt update your details for the project and add the paths to your libraries.
 
 If you want to use shared libraries, you can delete the lines for the STATIC LIBRARIES usage.
+
+## Output file
+
+By default it outputs the executable file in the source, but that can be modifiable from the `CMakeLists.txt`
+`set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY "../")`
