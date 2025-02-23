@@ -1,0 +1,3 @@
+
+#define cmakeTest_VERSION_MAJOR @cmakeTest_VERSION_MAJOR@
+#define cmakeTest_VERSION_MINOR @cmakeTest_VERSION_MINOR@
