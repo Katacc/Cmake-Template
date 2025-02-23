@@ -25,7 +25,7 @@ set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY "../")
 
 
 ## Static or shared libraries
-By default, static libraries are being used, remove these lines to enable shared libraries
+By default, static libraries are being used, remove these lines from `CMakeLists.txt` to enable shared libraries
 
 ```
 set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
@@ -38,17 +38,23 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 2. Put the library files in there
 3. Make a CMakeLists.txt file in the library and add the details for it:
 ```
-From /libraries/Utility/
----
+# From /libraries/Utility/CMakeLists.txt
+# ---
 
 add_library(Utility Utility.cpp)
 ```
 4. Add a line to top CMakeLists.txt
 ```
+# From /CMakeLists.txt
+# ---
+
 add_subdirectory(libraries/Utility)
 ```
 5. Update the included folders to look for the library aswell
 ```
+# From /CMakeLists.txt
+# ---
+
 target_include_directories(main PUBLIC
                              "${PROJECT_BINARY_DIR}"
                              "${PROJECT_SOURCE_DIR}/libraries/Utility"
