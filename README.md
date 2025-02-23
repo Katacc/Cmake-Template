@@ -32,3 +32,30 @@ set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 set(BUILD_SHARED_LIBS OFF)
 set(CMAKE_EXE_LINKER_FLAGS "-static")
 ```
+
+## Adding a library
+1. Make a new folder for the library in the `/libraries/` folder
+2. Put the library files in there
+3. Make a CMakeLists.txt file in the library and add the details for it:
+```
+From /libraries/Utility/
+---
+
+add_library(Utility Utility.cpp)
+```
+4. Add a line to top CMakeLists.txt
+```
+add_subdirectory(libraries/Utility)
+```
+5. Update the included folders to look for the library aswell
+```
+
+# Including directories
+# Need to include header (.h) file locations for libraries aswell
+# Example here is the Utility library
+target_include_directories(main PUBLIC
+                             "${PROJECT_BINARY_DIR}"
+                             "${PROJECT_SOURCE_DIR}/libraries/Utility"
+                             )
+```
+6. Include the library in your sourcecode!
